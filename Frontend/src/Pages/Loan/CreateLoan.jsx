@@ -19,7 +19,7 @@ function CreateLoan() {
     const _id = localStorage.getItem("_id");
     try {
       const response = await axios.post(
-        "http://localhost:4000/api/loan/create",
+        "https://mini-loan-mern-server.vercel.app/api/loan/create",
         { amount, term, _id, token }
       );
 
@@ -37,7 +37,7 @@ function CreateLoan() {
     const fetchdata = async () => {
       try {
         const response = await axios.post(
-          "http://localhost:4000/api/users/isAuthenticated",
+          "https://mini-loan-mern-server.vercel.app/api/users/isAuthenticated",
           { token }
         );
 

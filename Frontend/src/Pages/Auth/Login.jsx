@@ -18,7 +18,7 @@ function LoginPage() {
     try {
       console.log(email, password);
       const response = await axios.post(
-        "http://localhost:4000/api/users/signin",
+        "https://mini-loan-mern-server.vercel.app/api/users/signin",
         data
       );
       toast.success("Login Success");

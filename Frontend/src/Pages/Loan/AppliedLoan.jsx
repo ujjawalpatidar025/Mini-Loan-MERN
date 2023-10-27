@@ -39,7 +39,7 @@ function AppliedLoan() {
     const fetchdata = async () => {
       try {
         const response = await axios.post(
-          "http://localhost:4000/api/loan/getloans",
+          "https://mini-loan-mern-server.vercel.app/api/loan/getloans",
           { token }
         );
 
@@ -99,9 +99,9 @@ function AppliedLoan() {
                     className={`mt-2 p-2 font-bold text-white rounded ${
                       request.status == `Pending`
                         ? `text-red-600`
-                        : request.status == `Paid`
-                        ? `text-green-500`
-                        : `text-yellow-500`
+                        : request.status !== `Paid`
+                        ? `text-yellow-500`
+                        : `text-green-600`
                     }`}
                   >
                     {request.status}

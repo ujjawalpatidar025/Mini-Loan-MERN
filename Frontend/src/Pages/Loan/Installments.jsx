@@ -20,7 +20,7 @@ function Installments() {
     const token = localStorage.getItem("token");
     try {
       const response = await axios.post(
-        "http://localhost:4000/api/loan/payment",
+        "https://mini-loan-mern-server.vercel.app/api/loan/payment",
         { token, installmentid, loanid }
       );
 
@@ -59,7 +59,7 @@ function Installments() {
     const fetchdata = async () => {
       try {
         const response = await axios.post(
-          "http://localhost:4000/api/loan/getloanid",
+          "https://mini-loan-mern-server.vercel.app/api/loan/getloanid",
           { token, id }
         );
 

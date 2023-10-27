@@ -21,7 +21,7 @@ function RegisterPage() {
     try {
       console.log(email, password);
       const response = await axios.post(
-        "http://localhost:4000/api/users/signup",
+        "https://mini-loan-mern-server.vercel.app/api/users/signup",
         data
       );
       toast.success("Register Success");

@@ -14,7 +14,7 @@ const Home = () => {
     const fetchdata = async () => {
       try {
         const response = await axios.post(
-          "http://localhost:4000/api/users/isAuthenticated",
+          "https://mini-loan-mern-server.vercel.app/api/users/isAuthenticated",
           { token }
         );
 
@@ -22,6 +22,9 @@ const Home = () => {
           navigate("/login");
         } else {
           const user = response.data.others;
+          if (response.data.others.isAdmin) {
+            navigate("/admin/request");
+          }
           localStorage.setItem("_id", user._id);
           setloading(false);
         }
