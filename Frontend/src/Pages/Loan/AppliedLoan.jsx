@@ -69,11 +69,12 @@ function AppliedLoan() {
         <Loading />
       ) : (
         <div className="min-h-screen bg-gray-100 p-8">
-          <h1 className="text-2xl font-semibold text-center mb-6 bg-transparent">
-            View Loans
+          <h1 className="text-2xl text-left font-semibold  mb-6 bg-transparent text-gray-600">
+            <span className="text-4xl font-bold">V</span>iew Loans
           </h1>
+          <hr className="my-2 font-bold h-1 bg-gray-500" />
           <hr />
-          <div className="grid gap-4 bg-transparent">
+          <div className="grid gap-4 bg-transparent mt-5">
             {loans.length == 0 ? (
               <div className="h-[80vh] text-4xl flex justify-center items-center text-gray-400">
                 No Applied Loans Yet
@@ -97,11 +98,11 @@ function AppliedLoan() {
                   </div>
                   <button
                     className={`mt-2 p-2 font-bold text-white rounded ${
-                      request.status == `Pending`
-                        ? `text-red-400`
+                      request.status === `Pending`
+                        ? `text-rose-700`
                         : request.status !== `Paid`
                         ? `text-yellow-500`
-                        : `text-green-700`
+                        : `text-green-600`
                     }`}
                   >
                     {request.status}

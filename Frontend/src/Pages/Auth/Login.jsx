@@ -35,16 +35,17 @@ function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white p-8 rounded shadow-lg w-full max-w-md">
-        <h1 className="text-2xl font-semibold text-center mb-6 bg-white">
-          Login
+    <div className="min-h-screen flex items-center justify-center bg-white">
+      <div className=" p-8 rounded  w-full max-w-md   border-neutral-300">
+        <h1 className="text-4xl text-neutral-400  text-center mb-6 ">
+          <span className="font-bold text-neutral-400">L</span>ogin
         </h1>
-        <form onSubmit={handleLogin} className="bg-white">
-          <div className="mb-4 bg-white">
+        <hr />
+        <form onSubmit={handleLogin} className="mt-5">
+          <div className="mb-4 ">
             <label
               htmlFor="email"
-              className="block bg-white text-gray-600 text-sm font-medium mb-2"
+              className="block  text-gray-600 text-sm font-medium mb-2"
             >
               Email
             </label>
@@ -52,17 +53,17 @@ function LoginPage() {
               type="email"
               id="email"
               name="email"
-              className="w-full p-2 bg-white border border-gray-300 rounded"
+              className="w-full p-2  border border-gray-300 focus:outline-none focus:ring-gray-400 focus:ring-2 bg-transparent rounded"
               placeholder="Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
             />
           </div>
-          <div className="mb-4 bg-white">
+          <div className="mb-4 ">
             <label
               htmlFor="password"
-              className="block bg-white text-gray-600 text-sm font-medium mb-2"
+              className="block  text-gray-600 text-sm font-medium mb-2"
             >
               Password
             </label>
@@ -70,7 +71,7 @@ function LoginPage() {
               type="password"
               id="password"
               name="password"
-              className="w-full bg-white p-2 border border-gray-300 rounded"
+              className="w-full  p-2 border border-gray-300 focus:outline-none focus:ring-gray-400 focus:ring-2  bg-transparent rounded"
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -79,7 +80,7 @@ function LoginPage() {
           </div>
           <button
             type="submit"
-            className="w-full p-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+            className="w-full p-2 border-2 border-gray-400 text-gray-500 text-lg rounded hover:bg-gray-200 "
           >
             {loader ? (
               <div>
@@ -89,7 +90,7 @@ function LoginPage() {
                 >
                   <svg
                     aria-hidden="true"
-                    class="w-6 h-6 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-white"
+                    class="w-6 h-6 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-gray-400"
                     viewBox="0 0 100 101"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -111,12 +112,12 @@ function LoginPage() {
             )}
           </button>
         </form>
-        <div className="bg-white py-3">
-          <p className="bg-white">
-            Not having Account{" "}
+        <div className=" py-3">
+          <p className="">
+            Not having Account??{" "}
             <Link
               to="/register"
-              className="font-bold hover:underline  bg-white"
+              className="font-bold hover:underline text-gray-500  "
             >
               Register
             </Link>

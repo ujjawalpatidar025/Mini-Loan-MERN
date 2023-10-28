@@ -157,7 +157,7 @@ function Installments() {
                     disabled={
                       data.status === `Pending` || request.status === "Paid"
                     }
-                    className={`ml-2 mt-2 p-2 px-3 bg-gray-500 text-white rounded hover:bg-gray-600 ${
+                    className={`ml-2 mt-2 p-1 px-5 border-2  border-gray-400 text-gray-500 rounded hover:bg-gray-200 ${
                       request.status == `Paid` ? `hidden` : ``
                     }`}
                   >

@@ -63,13 +63,16 @@ function CreateLoan() {
       {loading ? (
         <Loading />
       ) : (
-        <div className="min-h-screen  bg-gray-100 p-8">
-          <h1 className="text-2xl bg-transparent font-semibold text-center mb-6">
-            Loan Application
+        <div className="h-screen  w-[35vw] mx-auto my-auto p-8">
+          <h1 className="text-4xl mt-20 text-neutral-400  text-center mb-6 ">
+            <span className="font-bold text-neutral-400">C</span>reate{" "}
+            <span className="font-bold text-neutral-400">L</span>oan
           </h1>
+          <hr />
+
           <form
             onSubmit={handleSubmit}
-            className="max-w-md mx-auto bg-white p-8 rounded shadow-lg"
+            className="max-w-md mx-auto mt-5 bg-white p-8 rounded "
           >
             <div className="mb-4 bg-white">
               <label
@@ -83,7 +86,7 @@ function CreateLoan() {
                 id="amount"
                 name="amount"
                 min="10000"
-                className="w-full bg-white p-2 border border-gray-300 rounded"
+                className="w-full focus:outline-none focus:ring-gray-400 focus:ring-2  bg-white p-2 border border-gray-300 rounded"
                 placeholder="Loan Amount"
                 value={amount}
                 onChange={(e) => setAmount(e.target.value)}
@@ -103,7 +106,7 @@ function CreateLoan() {
                 name="term"
                 max={amount}
                 min="1"
-                className="w-full bg-white p-2 border border-gray-300 rounded"
+                className="w-full focus:outline-none focus:ring-gray-400 focus:ring-2  bg-white p-2 border border-gray-300 rounded"
                 placeholder="Loan Term"
                 value={term}
                 onChange={(e) => setTerm(e.target.value)}
@@ -115,7 +118,7 @@ function CreateLoan() {
             </div>
             <button
               type="submit"
-              className="w-full p-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+              className="w-full p-2 border-2 border-gray-400 text-gray-500 text-lg rounded hover:bg-gray-200 "
             >
               Submit
             </button>
