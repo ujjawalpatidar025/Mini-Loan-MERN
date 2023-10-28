@@ -39,7 +39,7 @@ function AppliedLoan() {
     const fetchdata = async () => {
       try {
         const response = await axios.post(
-          "https://mini-loan-mern-svr.vercel.app/api/loan/getloans",
+          "http://localhost:4000/api/loan/getloans",
           { token }
         );
 
@@ -88,7 +88,7 @@ function AppliedLoan() {
                   className="bg-white p-4 rounded shadow-lg flex gap-2 justify-around items-center flex-wrap"
                 >
                   <div className="bg-white w-[20vw]">
-                    <strong className="bg-white">Loan Amount:</strong> $
+                    <strong className="bg-white">Loan Amount:</strong> RS.{" "}
                     {request.amount}
                   </div>
                   <div className="bg-white w-[20vw]">
@@ -98,10 +98,10 @@ function AppliedLoan() {
                   <button
                     className={`mt-2 p-2 font-bold text-white rounded ${
                       request.status == `Pending`
-                        ? `text-red-600`
+                        ? `text-red-400`
                         : request.status !== `Paid`
                         ? `text-yellow-500`
-                        : `text-green-600`
+                        : `text-green-700`
                     }`}
                   >
                     {request.status}

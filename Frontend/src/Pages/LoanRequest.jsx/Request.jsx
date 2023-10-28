@@ -21,7 +21,7 @@ function Request() {
     const fetchdata = async () => {
       try {
         const response = await axios.post(
-          "https://mini-loan-mern-svr.vercel.app/api/loan/getrequests",
+          "http://localhost:4000/api/loan/getrequests",
           { token }
         );
         //console.log(response);
@@ -64,7 +64,7 @@ function Request() {
     const token = localStorage.getItem("token");
     try {
       const response = await axios.post(
-        "https://mini-loan-mern-svr.vercel.app/api/loan/approve",
+        "http://localhost:4000/api/loan/approve",
         { id, token }
       );
       toast.success(response.data.message);

@@ -7,8 +7,14 @@ const authRoutes = require("./Routes/auth/authRoutes.js");
 const loanRoutes = require("./Routes/loan/loanRoutes.js");
 
 const app = express();
+
 dotenv.config();
+
 app.use(cors());
+
+const corsOptions = {
+  origin: "http://localhost:3000", // frontend URI (ReactJS)
+};
 app.use(express.urlencoded({ extended: false }));
 
 const MONGO_URL = process.env.MONGO_URL;

@@ -20,7 +20,7 @@ function Installments() {
     const token = localStorage.getItem("token");
     try {
       const response = await axios.post(
-        "https://mini-loan-mern-svr.vercel.app/api/loan/payment",
+        "http://localhost:4000/api/loan/payment",
         { token, installmentid, loanid }
       );
 
@@ -59,7 +59,7 @@ function Installments() {
     const fetchdata = async () => {
       try {
         const response = await axios.post(
-          "https://mini-loan-mern-svr.vercel.app/api/loan/getloanid",
+          "http://localhost:4000/api/loan/getloanid",
           { token, id }
         );
 
@@ -90,6 +90,7 @@ function Installments() {
             <h1 className="text-2xl font-semibold text-center mb-6 bg-transparent">
               Loan Installments
             </h1>
+
             <div className="grid gap-4 bg-transparent">
               <div className="bg-white p-4 rounded shadow-lg flex gap-2 justify-around items-center flex-wrap">
                 <div className="bg-white w-[20vw]">
@@ -113,6 +114,14 @@ function Installments() {
                 </button>
               </div>
             </div>
+            {data.status == "Pending" ? (
+              <h2 className="mt-5 text-red-500 font-bold ">
+                *You cannot pay any installments [ need approval from the admin
+                side ]
+              </h2>
+            ) : (
+              ""
+            )}
             <div className="grid gap-4 bg-transparent mt-20 h-[60vh] overflow-y-scroll">
               {data.installments.map((request, index) => (
                 <div
@@ -125,6 +134,7 @@ function Installments() {
                   </div>
                   <div className="bg-white w-[20vw]">
                     <strong className="bg-white">Installment Amount :</strong>{" "}
+                    {"RS.  "}
                     {request.am}
                   </div>
                   <div className="bg-white w-[20vw]">

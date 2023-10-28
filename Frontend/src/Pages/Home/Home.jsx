@@ -14,7 +14,7 @@ const Home = () => {
     const fetchdata = async () => {
       try {
         const response = await axios.post(
-          "https://mini-loan-mern-svr.vercel.app/api/users/isAuthenticated",
+          "http://localhost:4000/api/users/isAuthenticated",
           { token }
         );
 
