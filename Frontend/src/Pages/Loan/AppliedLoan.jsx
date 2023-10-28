@@ -39,7 +39,7 @@ function AppliedLoan() {
     const fetchdata = async () => {
       try {
         const response = await axios.post(
-          "https://mini-loan-mern-server.vercel.app/api/loan/getloans",
+          "https://mini-loan-mern-svr.vercel.app/api/loan/getloans",
           { token }
         );
 
